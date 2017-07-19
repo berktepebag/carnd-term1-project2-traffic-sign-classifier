@@ -13124,7 +13124,7 @@ Test Accuracy = 0.918
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Load the images and plot them here.</span>
@@ -13133,6 +13133,13 @@ Test Accuracy = 0.918
 
 <span class="n">image_list</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">label_list</span><span class="o">=</span><span class="p">[</span><span class="mi">22</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span><span class="mi">28</span><span class="p">]</span>
+<span class="n">explanations</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Image is looking straight to camera, brightness and contrast is not so well, image is bit grayish which may cause problems when applying gray scale..&quot;</span>
+              <span class="p">,</span><span class="s2">&quot;Image is looking to camera straight forward, brightness and contrast is almost perfect. Classification should be done with out problem.&quot;</span>
+              <span class="p">,</span><span class="s2">&quot;Image is taken from left bottom side of the sign, disturbance in alignment may cause wrong classification of the sign.&quot;</span>
+              <span class="p">,</span><span class="s2">&quot;Image is taken from right bottom side of the sign, disturbed alignment may cause wrong classification of the sign. Also image is bit grayish which can cause problem when applying gray scale.&quot;</span>
+              <span class="p">,</span><span class="s2">&quot;Image is taken from left bottom side of the sign, disturbance in alignment may cause wrong classification of the sign. Birghtness and contrast is not a problem.&quot;</span>
+              <span class="p">,</span><span class="s2">&quot;Image is taken almost straight, brightness and contrast is good for classification. &quot;</span>
+              <span class="p">,</span><span class="s2">&quot;Image is taken almost straight, brightness and contrast is fairly good for classification.&quot;</span><span class="p">]</span>
 
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">filename</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">label_list</span><span class="p">)),</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;images/*.jpg&#39;</span><span class="p">)):</span>
@@ -13145,6 +13152,7 @@ Test Accuracy = 0.918
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
     <span class="c1">#fig.text(.1,.1,str(label_list[i]))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Label ID: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">label_list</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">explanations</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
     
     <span class="c1">#turn into gray and normalize</span>
     <span class="n">internet_image</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">internet_image</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -13171,7 +13179,7 @@ Test Accuracy = 0.918
 
 
 <div class="output_text output_subarea ">
-<pre>&lt;matplotlib.figure.Figure at 0x29ae1518&gt;</pre>
+<pre>&lt;matplotlib.figure.Figure at 0x1fb172122b0&gt;</pre>
 </div>
 
 </div>
@@ -13276,6 +13284,7 @@ u0QaMrtEGjK7RBoyu0T6f+QKPwkD7GKdAAAAAElFTkSuQmCC
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Label ID: 22
+Image is looking straight to camera, brightness and contrast is not so well, image is bit grayish which may cause problems when applying gray scale..
 </pre>
 </div>
 </div>
@@ -13288,7 +13297,7 @@ u0QaMrtEGjK7RBoyu0T6f+QKPwkD7GKdAAAAAElFTkSuQmCC
 
 
 <div class="output_text output_subarea ">
-<pre>&lt;matplotlib.figure.Figure at 0x2a08cf60&gt;</pre>
+<pre>&lt;matplotlib.figure.Figure at 0x1fb19d81fd0&gt;</pre>
 </div>
 
 </div>
@@ -13398,6 +13407,7 @@ QmCC
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Label ID: 17
+Image is looking to camera straight forward, brightness and contrast is almost perfect. Classification should be done with out problem.
 </pre>
 </div>
 </div>
@@ -13410,7 +13420,7 @@ QmCC
 
 
 <div class="output_text output_subarea ">
-<pre>&lt;matplotlib.figure.Figure at 0x2aa6d6a0&gt;</pre>
+<pre>&lt;matplotlib.figure.Figure at 0x1fb19d99cc0&gt;</pre>
 </div>
 
 </div>
@@ -13526,6 +13536,7 @@ YbaPVGG2j1Rhto9UYbaPVGG2j1Rhto9UYbaP9P9N5K4oYT+CBAAAAABJRU5ErkJggg==
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Label ID: 4
+Image is taken from left bottom side of the sign, disturbance in alignment may cause wrong classification of the sign.
 </pre>
 </div>
 </div>
@@ -13538,7 +13549,7 @@ YbaPVGG2j1Rhto9UYbaPVGG2j1Rhto9UYbaP9P9N5K4oYT+CBAAAAABJRU5ErkJggg==
 
 
 <div class="output_text output_subarea ">
-<pre>&lt;matplotlib.figure.Figure at 0x29fca9b0&gt;</pre>
+<pre>&lt;matplotlib.figure.Figure at 0x1fb1720f3c8&gt;</pre>
 </div>
 
 </div>
@@ -13642,6 +13653,7 @@ K0Sf2BWiT+wK0Sd2hegTu0L0iV0h+sSuEP8PqwndX93+foIAAAAASUVORK5CYII=
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Label ID: 20
+Image is taken from right bottom side of the sign, disturbed alignment may cause wrong classification of the sign. Also image is bit grayish which can cause problem when applying gray scale.
 </pre>
 </div>
 </div>
@@ -13654,7 +13666,7 @@ K0Sf2BWiT+wK0Sd2hegTu0L0iV0h+sSuEP8PqwndX93+foIAAAAASUVORK5CYII=
 
 
 <div class="output_text output_subarea ">
-<pre>&lt;matplotlib.figure.Figure at 0x2a7d1be0&gt;</pre>
+<pre>&lt;matplotlib.figure.Figure at 0x1fb17025390&gt;</pre>
 </div>
 
 </div>
@@ -13769,6 +13781,7 @@ TkSuQmCC
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Label ID: 40
+Image is taken from left bottom side of the sign, disturbance in alignment may cause wrong classification of the sign. Birghtness and contrast is not a problem.
 </pre>
 </div>
 </div>
@@ -13781,7 +13794,7 @@ TkSuQmCC
 
 
 <div class="output_text output_subarea ">
-<pre>&lt;matplotlib.figure.Figure at 0x29e7c160&gt;</pre>
+<pre>&lt;matplotlib.figure.Figure at 0x1fb19b537f0&gt;</pre>
 </div>
 
 </div>
@@ -13884,6 +13897,7 @@ mpOkAAAAAElFTkSuQmCC
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Label ID: 27
+Image is taken almost straight, brightness and contrast is good for classification. 
 </pre>
 </div>
 </div>
@@ -13896,7 +13910,7 @@ mpOkAAAAAElFTkSuQmCC
 
 
 <div class="output_text output_subarea ">
-<pre>&lt;matplotlib.figure.Figure at 0x7466cc0&gt;</pre>
+<pre>&lt;matplotlib.figure.Figure at 0x1fb1a0ba668&gt;</pre>
 </div>
 
 </div>
@@ -14007,6 +14021,7 @@ zlCays5QmsrOUJrKzlD+DyHcJ8N8m/cfAAAAAElFTkSuQmCC
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Label ID: 28
+Image is taken almost straight, brightness and contrast is fairly good for classification.
 </pre>
 </div>
 </div>

@@ -143,6 +143,16 @@ The first image might be difficult to classify because ...
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
+***Pre-run Predictions For the Internet Images:
+
+1. Image: "Image is looking straight to camera, brightness and contrast is not so well, image is bit grayish which may cause problems when applying gray scale.."
+2. Image: "Image is looking to camera straight forward, brightness and contrast is almost perfect. Classification should be done with out problem."
+3. Image: "Image is taken from left bottom side of the sign, disturbance in alignment may cause wrong classification of the sign."
+4. Image: "Image is taken from right bottom side of the sign, disturbed alignment may cause wrong classification of the sign. Also image is bit grayish which can cause problem when applying gray scale."
+5. Image: "Image is taken from left bottom side of the sign, disturbance in alignment may cause wrong classification of the sign. Birghtness and contrast is not a problem."
+6. Image: "Image is taken almost straight, brightness and contrast is good for classification. "
+7. Image: "Image is taken almost straight, brightness and contrast is fairly good for classification."]
+
 Here are the results of the prediction:
 
 | Image			       	 		|     Prediction	        					| 
